@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>index</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg: #f2efe9;
+      --ink: #111;
+      --muted: #666;
+      --line: #000;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 2px solid var(--line);
+      margin-bottom: 12px;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+
+    .links {
+      border-top: 2px solid var(--line);
+      padding-top: 16px;
+    }
+
+    .links a {
+      display: block;
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- CHANGE IMAGE FILE NAME -->
+    <img src="index.jpg" alt="index image" />
+
+    <div class="meta">
+      <div>
+        image taken: <span id="image-time">2026-02-10 08:30</span>
+      </div>
+      <div>
+        now: <span id="now"></span>
+      </div>
+    </div>
+
+    <div class="links">
+      <!-- CHANGE LINKS -->
+      <a href="https://github.com/elmreks" target="_blank">github</a>
+      <a href="https://github.com/elmreks/lube" target="_blank">lube</a>
+      <a href="https://github.com/elmreks/common-ground" target="_blank">common ground</a>
+      <a href="https://eksrus.com" target="_blank">eksrus</a>
+    </div>
+
+  </div>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      document.getElementById("now").textContent =
+        now.toLocaleDateString() + " " + now.toLocaleTimeString();
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+  </script>
+</body>
+</html>
